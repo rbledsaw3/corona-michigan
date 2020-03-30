@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ "$(stat -c %y ~/.cache/corona 2>/dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ] && curl -s https://www.michigan.gov/coronavirus/0,9753,7-406-98163-520743--,00.html | html2text | grep -i "Total" > ~/.cache/corona
+[ "$(stat -c %y ~/.cache/corona 2>/dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ] && curl -s https://www.michigan.gov/coronavirus/0,9753,7-406-98163_98173---,00.html | html2text | grep -i "Total__" > ~/.cache/corona
 
 grep -i "Total" ~/.cache/corona |
 	sed 's/_//g ; s/,//g ; s/|/;/g ; s/%//g'|
